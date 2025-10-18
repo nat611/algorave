@@ -1,0 +1,8 @@
+$: note("[c e] [f a]").scale('C:major').sound("sawtooth").lpf("100 400 700 1000")
+$: sound("[- cp] [- cp] [- cp] [cp cp]").sound("jazz")
+setcpm(30)
+$: n("<[6,8] [7,9]>").scale("C:major").sound("gm_fx_atmosphere").lpf("500")
+$: sound("bd*4").bank("RolandTR707").lpf("1000")
+$: n("[0 [~ 0] 4 [3 2] [0 ~] [0 ~] <0 2> ~]/2")
+.scale("D2:minor")
+.sound("sawtooth,triangle").lpf("200, 500, 1000")
