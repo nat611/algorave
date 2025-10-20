@@ -1,0 +1,12 @@
+const lpf = slider(641.2, 400, 4000)
+hi_elswhere: note("f3 c4 a3 e4 d3 a3 e3 b3").decay(0.1).delay(0.8)
+  .sound("square").lpf(lpf)
+  ._punchcard()
+
+$: s("bd(4, 16)").bank("tr909").delay(0.2).lpf(5000)
+  ._punchcard()
+
+$: s("cp").bank("tr909").beat("4,12", 16)._punchcard()
+$: n("[c4 e4] [f4 a4]").scale('C:major').sound("sawtooth").lpf("400 600 800 1000")
+$: n("<[6,8] [7,9]>").scale("C:major").sound("gm_fx_atmosphere").lpf("lpf")
+
