@@ -1,0 +1,13 @@
+const dbank = "tr909"
+const lpf = slider(10000, 500, 10000)
+const delay = slider(1.1535,0.1,5)
+
+$: sound("AlesisSR16_hh").struct("1*16").lpf("400*3 1000*3 400*6 1000*3").gain(0.5)
+$: s("[hh hh]*8").gain("[0.25 1.5]*4")
+$: s("bd*4, [~ sd:1]*2, rim").bank(dbank).delay(0.15).lpf(lpf)
+  ._punchcard()
+
+$: note("<[c3,g3,e4] [bb2,f3,d4] [a2,f3,c4] [bb2,g3,eb4]>")
+.sound("sawtooth").vowel("<a e i o>").gain("0.5")
+
+$: sound("<numbers:1*8 numbers:1*15>").lpf(lpf).attack(0.1)
