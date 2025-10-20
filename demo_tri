@@ -1,0 +1,10 @@
+const dbank = "tr909"
+const lpf = slider(1241, 500, 10000)
+const delay = slider(0.1,0.1,5)
+
+$: s("hh!8").gain(.3)
+
+$: s("bd(<5 7>, 16)").bank(dbank).lpf("<1500 2000>")._punchcard()
+$: s("rim").bank(dbank).beat("4,8,12", 16)._punchcard()
+$: note("f3 c4 a3 e4").decay(0.1).delay(delay).sound("square").lpf(lpf)
+$: note("d3 a3 e3 b3").decay(0.1).delay(delay).sound("square").lpf(lpf)
