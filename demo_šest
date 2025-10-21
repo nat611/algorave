@@ -1,0 +1,11 @@
+$: note("<[e4,g4,b4] c4 [d4] [e4,g4,b4] c4 b4 [e4,g4,b4] [e4] [e4,g4,b4]>*8")
+  .gain(0.5)
+  .sound("sawtooth")
+  .lpf("700 1000 1000 700 1000 1000 700 1000 700")
+  .delay(0.3)
+
+$: s("<hh hh rim hh [- hh] hh hh oh>*8").bank("tr909")
+$: s("bd*4").bank("tr909").gain(2).decay(0.1)
+
+$: loop("<[B D# F# A]*1 [B D# F# A]*2 [B D# F# A]*1 [B D# F# A]*4>")
+  .sound("gm_synth_bass_2").gain(1).hpf("500, 1000, 2000, 10000")
